@@ -3,7 +3,6 @@ class Game {
     this.colliders = [];
   };
 };
-var game = new Game();
 class Vector2 {
   constructor(x, y) {
     this.x = x;
