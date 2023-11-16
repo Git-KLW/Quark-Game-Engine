@@ -1,7 +1,7 @@
 # Quark-Game-Engine
 A web-based game engine designed for making 2D games in the Javascript programming language.
 ## Licensing
-The Quark Game Engine is licensed under the [MIT License]([https://github.com/Git-KLW/Quark-Game-Engine/LICENSE](https://github.com/Git-KLW/Quark-Game-Engine/blob/main/LICENSE)]
+The Quark Game Engine is licensed under the [MIT License](https://github.com/Git-KLW/Quark-Game-Engine/blob/main/LICENSE)
 ## Use in Gamedev
 To include the game engine in your project put the following in your HTML header.
 ```html
