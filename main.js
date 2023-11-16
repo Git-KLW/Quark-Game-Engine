@@ -8,13 +8,25 @@ class Game {
       };
     };
     class RigidBody2D {
-      constructor() {
-        this.x = 0;
-        this.y = 0;
-        this.direction = 0;
-        this.velocity = {"xv":0, "yv":0};
-        this.gravity = null;
-        this.collider = null;
+      constructor(x, y, direction, vx, vy, collider) {
+        this.x = x;
+        this.y = y;
+        this.direction = direction;
+        this.velocity = {"xv":vx, "yv":vy};
+        this.gravity = true;
+        this.collider = collider;
+        this.move = function () {
+          this.velocity.xv *= 0.8;
+          this.velocity.yv *= 0.8;
+          this.x += this.velocity.xv;
+          if (this.collider.checkCollisions() == true) {
+            this.x -= this.velocity.xv;
+          };
+          this.y += this.velocity.yv;
+          if (this.collider.checkCollisions() == true) {
+            this.y -= this.velocity.yv;
+          };
+        };
       };
     };
     // TODO: Add Softbodies
@@ -24,17 +36,24 @@ class Game {
         this.height = height;
         this.x = x;
         this.y = y;
-        this.state = null;
         game.Colliders.push(this);
       };
     };
     class BoxCollider extends Collider {
       constructor() {
-        game.Colliders.forEach((collider) => {
-          
-        });
+        this.checkCollisions = function () {
+          game.Colliders.forEach((collider) => {
+            if (collider != this &&
+                this.x < collider.x + collider.width &&
+                this.x + this.width > collider.x &&
+                this.y < collider.y &&
+                this.y + this.height > collider.y) {
+              return true;
+            };
+          });
+        };
       };
     };
-    // TODO: Add Circlar Colliders
+    // TODO: Add Circular Colliders
   };
 };
