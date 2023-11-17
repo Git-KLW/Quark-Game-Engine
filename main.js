@@ -54,6 +54,17 @@ class Game {
         };
       };
     };
-    // TODO: Add Circular Colliders
+    class CircularCollider extends Collider {
+      constructor() {
+        this.checkCollisions = function () {
+          game.Colliders.forEach((collider) => {
+            if (collider != this &&
+                Math.sqrt((collider.y-this.y)**2 + (collider.x-this.x)**2) <= this.width {
+              return true;
+            };
+          });
+        };
+      };
+    };
   };
 };
