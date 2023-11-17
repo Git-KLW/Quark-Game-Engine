@@ -40,7 +40,7 @@ class Game {
       };
     };
     class BoxCollider extends Collider {
-      constructor() {
+      constructor(x, y, width, height) {
         this.checkCollisions = function () {
           game.Colliders.forEach((collider) => {
             if (collider != this &&
@@ -55,7 +55,7 @@ class Game {
       };
     };
     class CircularCollider extends Collider {
-      constructor() {
+      constructor(x, y, width, height) {
         this.checkCollisions = function () {
           game.Colliders.forEach((collider) => {
             if (collider != this &&
