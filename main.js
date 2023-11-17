@@ -27,8 +27,8 @@ class Collider {
     this.height = height;
     this.x = x;
     this.y = y;
-    if (game == undefined) {
-      var game = new Game()
+    if (game === undefined) {
+      game = new Game()
     }
     game.Colliders.push(this);
   };
